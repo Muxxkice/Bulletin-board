@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 
+import Home from "./page/Home";
+import Thread from "./page/Thread";
+import New from "./page/New";
 
-const App = () => {
+export const App = () => {
   return (
     <>
-      <h1>Hello world</h1>
+      <Home />
+      <Thread />
+      <New />
     </>
   );
-}
+};
 
 export default App;
