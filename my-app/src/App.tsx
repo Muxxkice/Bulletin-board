@@ -1,17 +1,25 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  BrowserRouter as Router,
+  Navigate,
+} from "react-router-dom";
 
-import Home from "./page/Home";
-import Thread from "./page/Thread";
-import New from "./page/New";
+import Home from "./pages/Home";
+import Thread from "./pages/Thread";
+import New from "./pages/New";
 
 export const App = () => {
   return (
-    <>
-      <Home />
-      <Thread />
-      <New />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/thread" element={<Thread />}>
+          <Route path="new" element={<New />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 };
 
