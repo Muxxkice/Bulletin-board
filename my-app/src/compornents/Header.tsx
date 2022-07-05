@@ -5,8 +5,7 @@ export const Header = () => {
   return (
     <header>
       <Link to="/">Home</Link>
-      <br />
-      <Link to="/thread">Thread</Link>
+      <p>掲示板</p>
     </header>
   );
 };
