@@ -1,9 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
 import { Header } from "../compornents/Header";
 import { getThreads } from "../api/ThreadApi"
+import New from "./New";
 
 export const Thread = () => {
   const [threads, setThreads] = useState([])
@@ -17,7 +18,6 @@ export const Thread = () => {
     })();
   }, [])
 
-  console.log(threads)
   const threads_map = threads.map((thread, index) => {
     return (
       <div key={index}>
@@ -33,11 +33,14 @@ export const Thread = () => {
   return (
     <>
       <Header />
+      <h2>スレッド一覧</h2>
       <h1>Thread</h1>
       {threads_map}
       <button onClick={async () => {
-        console.log("ボタン")
+        navigate("new")
       }} >新規作成</button >
+      <br />
+      <button>もっとみる</button>
 
     </>
 

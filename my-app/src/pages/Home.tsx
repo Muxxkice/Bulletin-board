@@ -1,13 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom"
 
 import { Header } from "../compornents/Header";
+import Thread from "./Thread";
 
 const Home = () => {
   return (
     <div>
       <Header />
-      <h1>Home</h1>
     </div>
   );
 };
