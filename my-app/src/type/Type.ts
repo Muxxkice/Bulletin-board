@@ -9,3 +9,5 @@ export type NewThreadsType = {
   threadId: string;
   title: string;
 };
+
+export type CommentType = { post: string };

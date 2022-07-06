@@ -1,10 +1,11 @@
 import axios, { AxiosResponse } from "axios";
-import { ThreadsType, NewThreadsType } from "../type/Type";
+import { ThreadsType, NewThreadsType, CommentType } from "../type/Type";
 
 const instance = axios.create({
   baseURL:
+    //  "https://railway-react-bulletin-board.herokuapp.com",
     "https://virtserver.swaggerhub.com/INFO_3/BulletinBoardApplication/1.0.0",
-  timeout: 2000,
+  // timeout: 2000,
   headers: { "Access-Control-Allow-Origin": "*" },
 });
 
@@ -24,7 +25,12 @@ export const getThreads = () => {
       console.log(e.ErrorMessageJP);
     });
 };
-export const newThread = async (data: string) => {
+
+type Data = {
+  title: string;
+};
+
+export const newThread = async (data: Data) => {
   try {
     console.log(data);
     const res = await instance.post("/threads", data);
@@ -47,14 +53,14 @@ export const getPosts = async (id: string) => {
   }
 };
 
-export const postComment = (data, id: string) => {
+export const postComment = (data: CommentType, id: string) => {
   console.log(data);
   console.log(id);
   return instance
     .post(`/threads/${id}/posts`, data)
     .then((res) => {
       console.log(res);
-      return res.data;
+      return res.status;
     })
     .catch((e) => {
       console.log(e);

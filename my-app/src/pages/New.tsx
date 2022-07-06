@@ -23,7 +23,7 @@ const New = () => {
 
   const onClickNew = async () => {
     const res = await newThread(newData);
-    // navigate("/thread")
+    setNewData(res);
   };
 
   return (

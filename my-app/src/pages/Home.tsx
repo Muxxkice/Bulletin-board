@@ -10,15 +10,15 @@ const Home = () => {
   const navigate = useNavigate();
   const threads = useThread();
   // const { setThreadTitle } = useContext(ThreadContext);
-  console.log(threads);
 
   const threads_map = threads.threads.map(
     (thread: ThreadsType, index: number) => {
       return (
-        <div key={index} className="thred_container">
-          <p>ID</p>
-          <p>{thread.id}</p>
-          <p>Title</p>
+        <div key={index} className="thread_container">
+          <dl>
+            <dt>名前:</dt>
+            <dd>{thread.id}</dd>
+          </dl>
           <h2>{thread.title}</h2>
           <button
             onClick={() => {
@@ -38,7 +38,7 @@ const Home = () => {
       <Header />
       <main>
         <h2>スレッド一覧</h2>
-        {threads_map}
+        <div className="archives_container">{threads_map}</div>
         <button
           onClick={async () => {
             navigate("/thread/new");
