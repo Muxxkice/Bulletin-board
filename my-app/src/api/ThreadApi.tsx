@@ -8,22 +8,11 @@ const instance = axios.create({
   headers: { "Access-Control-Allow-Origin": "*" },
 });
 
-// export const getThreads = async () => {
-//   try {
-//     const res = await instance.get("/threads?offset=10");
-//     console.log(res.data);
-//     return res.data;
-//   } catch (e) {
-//     console.log(e);
-//     console.log(e.ErrorMessageJP);
-//   }
-// };
-
 export const getThreads = () => {
   return instance
     .get("/threads?offset=10")
     .then((res) => {
-      if (res.data > 0) {
+      if (res.status === 200) {
         console.log(res.data);
         return res.data;
       } else {
@@ -58,12 +47,13 @@ export const getPosts = async (id: string) => {
   }
 };
 
-export const postComment = (id: string) => {
+export const postComment = (data, id: string) => {
+  console.log(data);
   console.log(id);
   return instance
-    .post(`/threads/${id}/posts`)
+    .post(`/threads/${id}/posts`, data)
     .then((res) => {
-      console.log(res.data);
+      console.log(res);
       return res.data;
     })
     .catch((e) => {

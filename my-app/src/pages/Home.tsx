@@ -10,7 +10,7 @@ const Home = () => {
   const navigate = useNavigate();
   const threads = useThread();
   // const { setThreadTitle } = useContext(ThreadContext);
-  console.log(threads.threads);
+  console.log(threads);
 
   const threads_map = threads.threads.map(
     (thread: ThreadsType, index: number) => {

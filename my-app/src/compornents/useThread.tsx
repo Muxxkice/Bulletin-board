@@ -11,7 +11,7 @@ export const useThread = () => {
   useEffect(() => {
     (async () => {
       const res = await getThreads();
-      if (res != null) {
+      if (res) {
         setThreads(res);
       }
     })();

@@ -35,7 +35,7 @@ export const Archives = () => {
 
   const onClickComment = async () => {
     console.log(" onClickComment");
-    const res = await postComment(id);
+    const res = await postComment(messageData, id);
     console.log(res);
   };
 
@@ -67,7 +67,9 @@ export const Archives = () => {
               {errors.post && <span>必須項目です</span>}
               <br />
             </form>
-            <button onClick={onClickComment}>投稿</button>
+            <button type="submit" onClick={onClickComment}>
+              投稿
+            </button>
           </div>
         </div>
       </main>
