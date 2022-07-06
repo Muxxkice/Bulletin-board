@@ -1,7 +1,42 @@
-header {
-  background-color: #9bbede;
+h1,
+h2,
+p,
+div {
+  margin: 0;
 }
 
+header {
+  background-color: #9bbede;
+  color: #0f5499;
+}
+header h1 {
+  text-align: center;
+}
+.title {
+  height: 50px;
+  background-color: #fff;
+  margin: 10px;
+}
+h2 {
+  padding: 10px 0;
+}
+main {
+  background-color: #cfdae6;
+  height: 800px;
+}
+
+.archives_container {
+  background-color: #fff;
+  margin: 10px;
+}
+.thread_container {
+  height: 200px;
+  padding: 10px;
+}
+.message_container {
+  background-color: #c3d2e3;
+  height: 200px;
+}
 /* デフォルトの設定 */
 
 .App {

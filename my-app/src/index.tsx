@@ -3,12 +3,17 @@ import ReactDOM from "react-dom/client";
 // import './index.css';
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ThreadProvider } from "../src/compornents/ThreadProvider";
+import "sanitize.css";
+import "./css/App.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ThreadProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </ThreadProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
