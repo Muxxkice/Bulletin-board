@@ -2,9 +2,8 @@ import axios, { AxiosResponse } from "axios";
 import { ThreadsType, NewThreadsType, CommentType } from "../type/Type";
 
 const instance = axios.create({
-  baseURL:
-    //  "https://railway-react-bulletin-board.herokuapp.com",
-    "https://virtserver.swaggerhub.com/INFO_3/BulletinBoardApplication/1.0.0",
+  baseURL: "https://railway-react-bulletin-board.herokuapp.com",
+  // "https://virtserver.swaggerhub.com/INFO_3/BulletinBoardApplication/1.0.0",
   // timeout: 2000,
   headers: { "Access-Control-Allow-Origin": "*" },
 });

@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import New from "./pages/New";
 import Page404 from "./pages/Page404";
 import Archives from "./pages/Archives";
+import db from "firebase";
 
 export const App = () => {
   return (

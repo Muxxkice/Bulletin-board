@@ -23,6 +23,9 @@ const New = () => {
 
   const onClickNew = async () => {
     const res = await newThread(newData);
+    if(res) {
+      
+    }
     setNewData(res);
   };
 
